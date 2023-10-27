@@ -19,6 +19,8 @@ app.get('/test',(request,response)=>{
 })
 
 //levantar el server y escuchar peticiones
+    //dropea y fuerza para que encaje la info de las tablas
+//sequelize.sync({force:true})
 sequelize.sync()
     .then(result=>{
         app.listen(8080,()=>{
