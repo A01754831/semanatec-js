@@ -1,10 +1,16 @@
 // Importar bibliotecas
 const express = require("express");
 const app = express()
+const personaRoutes = require('./routes/persona')
+const proyectoRoutes = require('./routes/proyecto')
+
+
 //Traer el objeto de conexión
 const sequelize = require('./util/database')
 //middleware
 app.use(express.json());
+app.use('/persona',personaRoutes)
+app.use('/proyecto',proyectoRoutes)
 
 //Mala práctica
 app.get('/test',(request,response)=>{

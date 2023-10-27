@@ -14,3 +14,15 @@ exports.postAgregarPersona = (req,res)=>{
             res.send("Hubo un problema")
         })
 }
+
+exports.getconsultarPersonas = async (req,res)=>{
+    try{
+        const result = await Persona.findAll();
+        res.send(result);
+    }catch(error){
+        console.error();
+        res.send("Hubo un problema")
+    }
+}
+
+    
